@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row justify-content-around">
+    <div class="col col-sm">
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <form class="client-form">
+            <mat-form-field class="example-full-width">
+              <input type="text" 
+                     placeholder="Cliente" 
+                     aria-label="Cliente" 
+                     matInput [formControl]="myControl" [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngFor="let client of filteredClients | async" [value]="client">
+                  {{client.name}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form>
+          <div *ngIf="myControl.value">
+            <h2>{{ myControl.value.name }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-end">
+    <div class="col col-sm">
+      <button mat-button (click)="next()">Siguiente</button>
+    </div>
+  </div>
+</div>
+
+
