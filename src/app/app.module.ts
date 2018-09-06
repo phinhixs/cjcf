@@ -12,7 +12,8 @@ import { SharedModule,
          HeaderComponent,
          FooterComponent,
          ApiService,
-         ClientService
+         ClientService,
+         ArticleService
 } from './shared';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
@@ -33,7 +34,8 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
   ],
   providers: [
     ApiService,
-    ClientService
+    ClientService,
+    ArticleService
   ],
   bootstrap: [AppComponent]
 })
