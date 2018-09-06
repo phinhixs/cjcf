@@ -2,15 +2,15 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { ClientComponent } from './client.component';
+import { OrderComponent } from './order.component';
 import { SharedModule,
-         ClientService
-       } from '../shared';
+  ClientService
+} from '../shared';
 
 const clientRouting: ModuleWithProviders = RouterModule.forChild([
   {
-    path: 'client',
-    component: ClientComponent,
+    path: '',
+    component: OrderComponent,
     resolve: {
 
     }
@@ -23,13 +23,8 @@ const clientRouting: ModuleWithProviders = RouterModule.forChild([
     SharedModule,
     clientRouting
   ],
-  entryComponents: [ClientComponent],
   declarations: [
-    ClientComponent
-  ],
-  bootstrap: [ClientComponent],
-  providers: [
-    ClientService
+    OrderComponent
   ]
 })
-export class ClientModule { }
+export class OrderModule { }

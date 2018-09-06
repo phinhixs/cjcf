@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ClientModule } from './client/client.module';
+import { OrderModule } from './order/order.module';
 
 import { SharedModule,
          HeaderComponent,
@@ -13,7 +14,6 @@ import { SharedModule,
          ApiService,
          ClientService
 } from './shared';
-import { OrderComponent } from './order/order.component';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
@@ -21,15 +21,15 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
   declarations: [
     AppComponent,
     FooterComponent,
-    HeaderComponent,
-    OrderComponent
+    HeaderComponent
   ],
   imports: [
     rootRouting,
     BrowserModule,
     BrowserAnimationsModule,
     SharedModule,
-    ClientModule
+    ClientModule,
+    OrderModule
   ],
   providers: [
     ApiService,
